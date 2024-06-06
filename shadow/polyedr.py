@@ -87,8 +87,7 @@ class Edge:
         edge = R3(self.fin.x - self.beg.x,
                   self.fin.y - self.beg.y, self.fin.z - self.beg.z)
         pr_edge = R3(self.fin.x - self.beg.x, self.fin.y - self.beg.y, 0)
-        len_pr_edge = sqrt(pr_edge.x ** 2 + pr_edge.y ** 2)
-        if len_pr_edge != 0:
+        if pr_edge.lenght() != 0:
             n_cos = abs(edge.dot(pr_edge) / (edge.lenght() * pr_edge.lenght()))
         else:
             n_cos = 0
