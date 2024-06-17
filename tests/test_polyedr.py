@@ -28,7 +28,7 @@ class TestPolyedr(unittest.TestCase):
             self.polyedr = Polyedr(fake_file_path)
             _file.assert_called_once_with(fake_file_path)
 
-        fake_file_content = """200.0	60.0	-140.0	60.0
+        fake_file_content = """200.0	0.0	0.0	0.0
 8	5	20
 -1.6	-1.6	1.6
 -1.6	1.6	1.6
@@ -116,19 +116,19 @@ class TestPolyedr(unittest.TestCase):
     # У коробки два ребра длины 3.2, удовлетворяющих условию
     def test_visual_edge_1(self):
         self.polyedr1.visual_edge()
-        self.assertAlmostEqual(self.polyedr1.summ_vis_edges, 2)
+        self.assertAlmostEqual(self.polyedr1.summ_vis_edges, 6.4)
 
     # Хоть у данных плоскостей и есть освещённые рёбра,
     # но проекция их центра не подпадает под условия
     def test_visual_edge_2(self):
-        self.polyedr3.visual_edge()
-        self.assertAlmostEqual(self.polyedr3.summ_vis_edges, 0)
+        self.polyedr2.visual_edge()
+        self.assertAlmostEqual(self.polyedr2.summ_vis_edges, 0)
 
     # Рёбра не лежат в заданной области
     def test_visual_edge_3(self):
-        self.polyedr4.visual_edge()
-        self.assertAlmostEqual(self.polyedr4.summ_vis_edges, 0)
+        self.polyedr3.visual_edge()
+        self.assertAlmostEqual(self.polyedr3.summ_vis_edges, 0)
 
     def test_visual_edge_4(self):
-        self.polyedr5.visual_edge()
-        self.assertAlmostEqual(self.polyedr5.summ_vis_edges, 1.4)
+        self.polyedr4.visual_edge()
+        self.assertAlmostEqual(self.polyedr4.summ_vis_edges, 1.4)
