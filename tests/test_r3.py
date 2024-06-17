@@ -1,6 +1,6 @@
 import unittest
 
-from math import pi
+from math import pi, sqrt
 from common.r3 import R3
 from tests.matchers import R3ApproxMatcher
 
