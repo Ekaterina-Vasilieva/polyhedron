@@ -111,4 +111,3 @@ class TestR3(unittest.TestCase):
 
     def test_lenght(self):
         self.assertEqual(self.a.lenght(), sqrt(14.0))
-
